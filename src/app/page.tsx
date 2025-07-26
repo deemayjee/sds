@@ -167,7 +167,7 @@ export default function Home() {
             Your Memecoin Token Reality Check!
           </h2>
           <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
-            Let's analyze your wallet's first 300 memecointransactions to calculate how many chemotherapy sessions 
+            Let&apos;s analyze your wallet&apos;s first 300 memecointransactions to calculate how many chemotherapy sessions 
             you could have funded instead of losing money on Shitters!
           </p>
           
@@ -237,7 +237,7 @@ export default function Home() {
                     <div className="text-4xl mb-4">🎉</div>
                     <h4 className="text-xl font-bold text-green-800 mb-2">Congratulations!</h4>
                     <p className="text-green-700">
-                      You haven't lost money on Memecoins in your first 300 transactions. Keep up the good trading decisions!
+                      You haven&apos;t lost money on Memecoins in your first 300 transactions. Keep up the good trading decisions!
                     </p>
                   </div>
                 )}
