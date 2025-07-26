@@ -19,7 +19,7 @@ interface TokenLoss {
 }
 
 export default function Home() {
-  const { authenticated, user } = usePrivy();
+  const { authenticated, user, logout } = usePrivy();
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [walletAddress, setWalletAddress] = useState<string>('');
@@ -45,6 +45,21 @@ export default function Home() {
 
   const handleConnect = () => {
 
+  };
+
+  const handleAnalyzeAnotherWallet = async () => {
+    try {
+      await logout();
+      
+      setShowResults(false);
+      setTokenLosses([]);
+      setTotalTransactions(0);
+      setProcessedTransactions(0);
+      setError('');
+      setWalletAddress('');
+    } catch (error) {
+      console.error('Failed to disconnect wallet:', error);
+    }
   };
 
   const handleAnalyzeWallet = async () => {
@@ -110,7 +125,7 @@ export default function Home() {
               </p>
             </div>
             
-            <div className="card max-w-md mx-auto">
+            <div className="card max-w-md mx-auto mb-8 md:mb-0">
               <div className="text-center">
                 <div className="text-lg font-semibold text-black mb-4">
                   Why Connect Your Wallet?
@@ -241,6 +256,15 @@ export default function Home() {
                     </p>
                   </div>
                 )}
+                
+                <div className="mt-8 flex justify-center">
+                  <button
+                    onClick={handleAnalyzeAnotherWallet}
+                    className="btn-secondary text-lg px-8 py-3"
+                  >
+                    Analyze Another Wallet
+                  </button>
+                </div>
               </div>
             </div>
           </section>
