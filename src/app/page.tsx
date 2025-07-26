@@ -37,7 +37,7 @@ export default function Home() {
   useEffect(() => {
     if (authenticated && user) {
       const address = user.wallet?.address || 
-                     (user.linkedAccounts?.[0] as any)?.address ||
+                     (user.linkedAccounts?.[0] as { address?: string })?.address ||
                      '';
       setWalletAddress(address);
     }
