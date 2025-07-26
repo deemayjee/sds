@@ -73,7 +73,7 @@ export class SolanaTrackerService {
     this.apiKey = apiKey || getApiKey();
   }
 
-  private async fetchWithAuth(url: string): Promise<any> {
+  private async fetchWithAuth(url: string): Promise<SolanaTrackerTradesResponse> {
     const headers: Record<string, string> = {
       'Content-Type': 'application/json',
     };

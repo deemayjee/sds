@@ -28,7 +28,7 @@ export default function WalletConnection({ onConnect }: WalletConnectionProps) {
   };
 
   if (authenticated && user) {
-    const walletAddress = user.wallet?.address || (user.linkedAccounts?.[0] as any)?.address || 'Connected';
+    const walletAddress = user.wallet?.address || (user.linkedAccounts?.[0] as { address?: string })?.address || 'Connected';
     
     return (
       <div className="flex items-center space-x-4">
